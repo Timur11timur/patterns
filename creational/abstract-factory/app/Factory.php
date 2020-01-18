@@ -21,7 +21,7 @@ class Factory
             case 'bootstrap':
                 $factory = new BootstrapFactory();
                 break;
-            case 'semanticui':
+            case 'semantic':
                 $factory = new SemanticFactory();
                 break;
             default:
