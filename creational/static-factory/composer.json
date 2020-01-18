@@ -1,5 +1,5 @@
 {
-    "name": "timur/interface",
+    "name": "timur/staticfactory",
     "require": {
         "php": "^7.0"
     },

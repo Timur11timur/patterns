@@ -1,5 +1,5 @@
 {
-    "name": "timur/propertycontainer",
+    "name": "timur/eventchannel",
     "require": {
         "php": "^7.0"
     },

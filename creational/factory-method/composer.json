@@ -1,5 +1,5 @@
 {
-    "name": "timur/propertycontainer",
+    "name": "timur/factorymethod",
     "require": {
         "php": "^7.0"
     },
