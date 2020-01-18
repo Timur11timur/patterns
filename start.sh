@@ -4,6 +4,9 @@
 cd creational/abstract-factory/
 composer install
 
+cd ../factory-method
+composer install
+
 cd ../../fundamental/delegation/
 composer install
 
