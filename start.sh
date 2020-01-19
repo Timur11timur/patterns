@@ -10,6 +10,9 @@ composer install
 cd ../static-factory
 composer install
 
+cd ../simple-factory
+composer install
+
 cd ../../fundamental/delegation/
 composer install
 
