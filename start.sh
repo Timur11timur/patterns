@@ -13,6 +13,9 @@ composer install
 cd ../simple-factory
 composer install
 
+cd ../singleton
+composer install
+
 cd ../../fundamental/delegation/
 composer install
 
