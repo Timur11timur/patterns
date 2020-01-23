@@ -1,5 +1,6 @@
 {
     "name": "timur/simplefactory",
+    "require": {
         "php": "^7.0"
     },
     "autoload": {

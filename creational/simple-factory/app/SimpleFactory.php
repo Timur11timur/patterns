@@ -4,9 +4,10 @@
 namespace App;
 
 
+use App\Classes\SmsMessenger;
+use App\Classes\EmailMessenger;
 use App\Interfaces\MessengerInterface;
 use App\Interfaces\MessengerSimpleFactoryInterface;
-use Messenger\Realisations\EmailMessenger;
 
 class SimpleFactory implements MessengerSimpleFactoryInterface
 {
