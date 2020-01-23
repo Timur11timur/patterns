@@ -1,5 +1,5 @@
 {
-    "name": "timur/singleton",
+    "name": "timur/strategy",
     "require": {
         "php": "^7.0"
     },

@@ -28,4 +28,7 @@ composer install
 cd ../property-container
 composer install
 
+cd ../../behavioral/strategy/
+composer install
+
 echo "Done"
