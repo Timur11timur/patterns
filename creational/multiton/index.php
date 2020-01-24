@@ -5,15 +5,9 @@ ini_set('display_startup_errors', 1);
 
 require_once './vendor/autoload.php';
 
-$factory = new App\SimpleFactory();
+$multiton[] = App\SimpleMultiton::getInstance('mysql')->setTest('mysql-test');
+$multiton[] = App\SimpleMultiton::getInstance('mongo');
+$multiton[] = App\SimpleMultiton::getInstance('mysql');
+$multiton[] = App\SimpleMultiton::getInstance('mongo')->setTest('mongo-test');
 
-try {
-    $appMailMessenger =  $factory->build('email');
-    $appPhoneMessenger = $factory->build('sms');
-    $appPigeonMessenger = $factory->build('pigeon');
-} catch (\Exception $e) {
-    echo $e->getMessage() . "<hr />";
-}
-
-$appMailMessenger->send();
-$appPhoneMessenger->send();
+var_dump($multiton);

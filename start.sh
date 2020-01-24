@@ -19,6 +19,9 @@ composer install
 cd ../multiton
 composer install
 
+cd ../builder
+composer install
+
 cd ../../fundamental/delegation/
 composer install
 
