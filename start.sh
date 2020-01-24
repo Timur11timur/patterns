@@ -22,6 +22,9 @@ composer install
 cd ../builder
 composer install
 
+cd ../lazy-initialization
+composer install
+
 cd ../../fundamental/delegation/
 composer install
 
