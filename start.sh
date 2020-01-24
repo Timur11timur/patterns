@@ -1,43 +1,70 @@
 
 #!/bin/bash
+FILE='composer.lock'
 
 cd creational/abstract-factory/
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../factory-method
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../static-factory
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../simple-factory
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../singleton
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../multiton
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../builder
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../lazy-initialization
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../../fundamental/delegation/
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../event-channel
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../interface
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../property-container
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 cd ../../behavioral/strategy/
-composer install
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
 
 echo "Done"

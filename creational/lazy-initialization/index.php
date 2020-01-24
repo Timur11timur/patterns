@@ -5,20 +5,10 @@ ini_set('display_startup_errors', 1);
 
 require_once './vendor/autoload.php';
 
-$builder = new App\BlogPostBuilder();
+$lazyLoad = new App\LazyInitialization();
 
-$posts[] = $builder->setTitle('First post')
-                    ->getBlogPost();
+$users[] = $lazyLoad->getUser()->name;
+$users[] = $lazyLoad->getUser()->email;
+$users[] = $lazyLoad->getUser()->motto;
 
-$posts[] = $builder->setTitle('Second post')
-    ->setBody('Body of the second post')
-    ->getBlogPost();
-
-$manger = new \App\BlogPostManager();
-$manger->setBuilder($builder);
-
-$posts[] = $manger->createCleanPost();
-$posts[] = $manger->createNewItPost();
-$posts[] = $manger->createNewСatsPost();
-
-var_dump($posts);
+var_dump($users);
