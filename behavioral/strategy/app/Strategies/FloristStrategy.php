@@ -4,7 +4,7 @@
 namespace App\Strategies;
 
 
-class FloristStrategy
+class FloristStrategy extends AbstractStrategy
 {
 
 }

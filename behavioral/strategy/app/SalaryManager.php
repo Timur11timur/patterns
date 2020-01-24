@@ -34,6 +34,9 @@ class SalaryManager
         $this->users = $users;
     }
 
+    /**
+     * @return array
+     */
     public function handle()
     {
         $usersSalary = $this->calculateSalary();
@@ -45,29 +48,64 @@ class SalaryManager
 
     public function calculateSalary()
     {
+        $usersSalary =[];
         foreach ($this->users as $user) {
             $strategy = $this->getStrategyByUser($user);
             $salary = $this->setCalculateStrategy($strategy)
                 ->calculateUserSalary($this->period, $user);
+            $strategyName = $strategy->getName();
 
-
+            $usersSalary[] = [
+              'userName' => $user['name'],
+              'salary' => $salary,
+              '$strategyName' => $strategyName
+            ];
         }
 
         return $usersSalary;
     }
 
-    private function saveSatary($usersSalary)
+    private function saveSalary($usersSalary)
     {
         return true;
     }
 
+    /**
+     * @param $user
+     * @return SalaryStrategyInterface
+     * @throws \Exception
+     */
     private function getStrategyByUser ($user): SalaryStrategyInterface
     {
+        $strqategyClass = __NAMESPACE__ . '\\Strategies\\' . ucwords($user['position']) . "Strategy";
 
+        if(!class_exists($strqategyClass)) {
+            throw new \Exception("Класс " . $strqategyClass . " не существует");
+        }
+
+        return new $strqategyClass;
     }
 
+    /**
+     * @param array $period
+     * @param array $user
+     *
+     * @return int
+     */
     private function calculateUserSalary($period, $user)
     {
         return $this->salaryStrategy->calc($period, $user);
+    }
+
+    /**
+     * @param SalaryStrategyInterface $strategy
+     *
+     * @return $this
+     */
+    private function setCalculateStrategy(SalaryStrategyInterface $strategy)
+    {
+        $this->salaryStrategy = $strategy;
+
+        return $this;
     }
 }

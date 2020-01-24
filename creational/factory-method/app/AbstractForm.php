@@ -17,7 +17,6 @@ abstract class AbstractForm implements FormInterface
         $factory = $this->createFactory();
         echo $factory->buildCheckbox()->draw();
         echo $factory->buildButton()->draw();
-
     }
 
     /**

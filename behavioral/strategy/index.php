@@ -13,20 +13,29 @@ $users = [
     [
         'name' => 'Roy',
         'age' => 40,
-        'position' => 'driver'
+        'position' => 'courierAuto'
     ],
     [
         'name' => 'Larisa',
         'age' => 55,
-        'position' => 'accounter'
+        'position' => 'logist'
     ],
     [
         'name' => 'Ivan',
         'age' => 30,
-        'position' => 'courier'
+        'position' => 'courierHiking'
     ],
+    [
+        'name' => 'Vera',
+        'age' => 21,
+        'position' => 'florist'
+    ]
 ];
 
-$result = (new App\SalaryManager($period, $users))->handle();
+try {
+    $result = (new App\SalaryManager($period, $users))->handle();
+} catch (\Exception $e) {
+    echo $e->getMessage() . "<hr />";
+}
 
 var_dump($result);

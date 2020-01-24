@@ -4,7 +4,7 @@
 namespace App\Strategies;
 
 
-class CourierHikingStrategy
+class CourierHikingStrategy extends AbstractStrategy
 {
 
 }
