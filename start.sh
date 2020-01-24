@@ -42,6 +42,11 @@ if [ ! -f "$FILE" ]; then
     composer install
 fi
 
+cd ../prototype
+if [ ! -f "$FILE" ]; then
+    composer install
+fi
+
 cd ../../fundamental/delegation/
 if [ ! -f "$FILE" ]; then
     composer install
